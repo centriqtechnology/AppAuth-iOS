@@ -84,12 +84,14 @@
   NSString *oauthErrorURI = errorResponse[OIDOAuthErrorFieldErrorURI];
 
   // builds the error description, using the information supplied by the server if possible
+  /* Removing processing of oauthErrorMessage to appease ForgeRock.
   NSMutableString *description = [NSMutableString string];
   [description appendString:oauthErrorCodeString];
   if (oauthErrorMessage) {
     [description appendString:@": "];
     [description appendString:oauthErrorMessage];
   }
+  */
   if (oauthErrorURI) {
     if ([description length] > 0) {
       [description appendString:@" - "];
